@@ -1,0 +1,207 @@
+var i, l, max, min, n: integer;
+begin
+n:=1;
+writeln('Введите минимальное значение желаемого диапазона: ');
+readln(min);
+writeln('Введите максимальное значение желаемого диапазона: ');
+readln(max);
+for i:=min to max do
+begin
+if i mod 2 = 0 then
+l:= l + i else
+n:= n * i;
+end;
+writeln('Сумма четных чисел: ', l);
+writeln('Произведение нечетных чисел: ', n);
+end.
+Program dyim;
+var d: integer;
+var s: real;
+begin
+  for d:=1 to 1 do
+  begin
+    s:=d*2.54;
+    writeln (d, ' дюйм = ', s, ' см.');
+  end;
+  for d:=2 to 4 do
+  begin
+    s:=d*2.54;
+    writeln (d, ' дюйма = ', s, ' см.');
+  end;
+  for d:=5 to 20 do
+  begin
+    s:=d*2.54;
+    writeln (d, ' дюймов = ', s, ' см.');
+  end;
+end.
+Program sumkv;
+var s, n, m: integer;
+begin
+  for n:=4 to 37 do
+  begin
+    m:=sqr(n);
+    s:=s+m;
+  end;
+    writeln ('сумма квадратов натуральных чисел от 4 до 37 равна ', s);
+end.
+Var a, b, c: integer;
+Begin
+Writeln('Введите число: ');
+readln(c);
+Write('Эти числа являются натуральными делителями заданного числа: ');
+for a:=c downto 1 do
+Begin
+b:=c mod a;
+ if b = 0 then
+   write(a, ', ')
+End;
+End.
+Var a, b, c, x: integer;
+Begin
+Writeln('Введите число: ');
+readln(c);
+for a:=c downto 1 do
+Begin
+b:=c mod a;
+ if b = 0 then
+   x:=x+1;
+End;
+ write('Делителей заданного числа: ', x)
+End.
+var a,b,c,r,h,x,i: integer;
+begin
+a:=1; //1 бактерия
+c:=1;
+writeln('Введите целое значение момента времени(например: 16): ');
+readln(b);
+repeat
+  a:=a*2;
+  c:=c+1;
+until c = b+1;
+writeln('Количество бактерий полученное из заданного времени: ',a)
+end.
+var a,b:integer;
+begin
+a:=1;
+repeat
+b:=a*a;
+Writeln('------------------------------------');
+Writeln('число квадрат');
+writeln(a:5,' ',b:5);
+a:=a+1;
+until a>100;
+end.
+var s,b,n,x:real;
+begin
+writeln('Введите n: ');
+readln(n);
+repeat
+begin
+b:=b+1;
+s:=1/b;
+x:=x+s;
+end;
+until b=n;
+writeln('Сумма 1+1/2+1/3+1/4...1/n: ' , x);
+end.
+var s,b,n,x:real;
+begin
+writeln('Введите n: ');
+readln(n);
+repeat
+begin
+b:=b+1;
+s:=1/b;
+x:=x+s;
+end;
+until b=n;
+writeln('Сумма 1+1/2+1/3+1/4...1/n: ' , x);
+end.
+var x, n, a: integer;
+begin
+write ('Введите значение n: ');
+readln (n);
+a:=1;
+x:=1;
+repeat
+a:=a*x;
+x:=x+1;
+until x>n;
+write (n,'! = ', a, '.')
+end.
+var b, c, a: integer;
+begin
+write('Введите натуральное число: ');
+readln(b);
+c:=0;
+while s>0 do 
+begin
+a:= b mod 10;
+c:= c * 10 + a;
+b:= b div 10;
+end;
+writeln('Перевернутое число: ', c);
+end.
+{вывод всех четных чисел от 2 до 99 включительно.}
+Program chetn;
+var n, m: integer;
+begin
+  m:=2;
+  while m <= 99 do
+  begin
+    if m mod 2 = 0 then
+    writeln (m);
+    m:=m+1;
+  end;
+end.
+var c, d, a, a1, a2, a3, b1, b2, b3, b: integer;
+begin
+d:=0; //объявляем число счастливых билетов
+c:=1;
+while c<=999999 do begin 
+a:=c div 1000;
+b:=c mod 1000;
+a1:=a div 100;
+a2:=(a div 10) mod 10;
+a3:=a mod 10;
+b1:=b div 100;
+b2:=(b div 10) mod 10;
+b3:=b mod 10;
+c:=c+1;
+if ((a1+a2+a3)=13) and ((a1+a2+a3)=(b1+b2+b3)) then //считаем число счастливых билетов
+d:=d+1;
+end;
+write ('Число счастливых билетов = ', d)
+end.
+Var x, a, b, c, l: real;
+Begin
+b:= 3;
+x:= 1;
+a:= 0;
+While x<=10 do
+begin
+c:=c+b;
+b:=b+6;
+a:=a+1;
+x:=x+1;
+End;
+l:=c/a;
+writeln('Среднее арифметическое данного ряда: ', l)
+End.
+var a, c, n, s, v: integer;
+begin 
+write ('Введите число ');
+readln (a);
+v:=1;
+while a<>0 do
+begin
+c:= a mod 10;
+a:= a div 10;
+n:=n+1;
+s:=s+c;
+v:=v*c;
+end;
+writeln ('Количество цифр равно ', n);
+writeln ('Сумма цифр равна ', s);
+writeln ('Произведение цифр равно ', v);
+end.
